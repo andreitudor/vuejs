@@ -1,7 +1,7 @@
 <template>
     <div>
         <li class="nav-item">
-            <router-link v-on:click="active++" class="nav-link" :to=link>{{ name }}</router-link>
+            <router-link v-on:click="active_link++" class="nav-link { active: active_link == 1 }" :to=link>{{ name }}</router-link>
         </li>
     </div>
 </template>
@@ -15,7 +15,7 @@ export default {
   },
   data: function () {
     return {
-      active: 0
+      active_link: 0
     }
   },
   methods: {
