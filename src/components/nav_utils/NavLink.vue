@@ -1,7 +1,7 @@
 <template>
     <div>
         <li class="nav-item">
-            <router-link v-on:click="active_link++" class="nav-link { active: active_link == 1 }" :to=link>{{ name }}</router-link>
+            <router-link class="nav-link navLinkColor" :to=link>{{ name }}</router-link>
         </li>
     </div>
 </template>
@@ -12,19 +12,21 @@ export default {
   props: {
     link: String,
     name: String
-  },
-  data: function () {
-    return {
-      active_link: 0
-    }
-  },
-  methods: {
-    activate: function () {
-    }
   }
 }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+    a.nav-link.navLinkColor {
+        color: black;
+        font-weight: 600;
+        &:hover {
+            text-decoration: underline;
+            color: black;
+        }
+    }
+    a.nav-link.navLinkColor.router-link-exact-active {
+        color: black;
+        text-decoration: underline;
+    }
 </style>
